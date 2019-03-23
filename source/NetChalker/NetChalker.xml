@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NetChalker</name>
+    </assembly>
+    <members>
+        <member name="T:NetChalker.MessageType">
+            <summary>
+            All possible message types. These can be changed if needed.
+            </summary>
+        </member>
+        <member name="F:NetChalker.MessageType.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:NetChalker.MessageType.Error">
+            <summary>
+            Error
+            </summary>
+        </member>
+        <member name="F:NetChalker.MessageType.Info">
+            <summary>
+            Info
+            </summary>
+        </member>
+        <member name="F:NetChalker.MessageType.Warning">
+            <summary>
+            Warning
+            </summary>
+        </member>
+        <member name="F:NetChalker.MessageType.Success">
+            <summary>
+            Success
+            </summary>
+        </member>
+        <member name="F:NetChalker.MessageType.Wait">
+            <summary>
+            Wait
+            </summary>
+        </member>
+        <member name="T:NetChalker.MessageTypeData">
+            <summary>
+            The struct that will be used as prefix.
+            </summary>
+        </member>
+        <member name="M:NetChalker.MessageTypeData.#ctor(System.ConsoleColor,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NetChalker.MessageTypeData"/> class.
+            </summary>
+            <param name="color">The color that will be used for the background.</param>
+            <param name="text">The text.</param>
+        </member>
+        <member name="P:NetChalker.MessageTypeData.Color">
+            <summary>
+            The background color.
+            </summary>
+        </member>
+        <member name="P:NetChalker.MessageTypeData.Text">
+            <summary>
+            The prefix text.
+            </summary>
+        </member>
+        <member name="T:NetChalker.Chalker">
+            <summary>
+            The main Chalker class.
+            </summary>
+        </member>
+        <member name="M:NetChalker.Chalker.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:NetChalker.Chalker"/> class.
+            </summary>
+        </member>
+        <member name="M:NetChalker.Chalker.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NetChalker.Chalker"/> class.
+            </summary>
+            <param name="paddingRight">The padding that will be used on the right side of the prefix. Negative values are not allowed.</param>
+        </member>
+        <member name="M:NetChalker.Chalker.#ctor(NetChalker.TextCasing)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NetChalker.Chalker"/> class.
+            </summary>
+            <param name="casing">The casing method used for the prefix.</param>
+        </member>
+        <member name="M:NetChalker.Chalker.#ctor(System.Int32,NetChalker.TextCasing)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NetChalker.Chalker"/> class.
+            </summary>
+            <param name="paddingRight">The padding that will be used on the right side of the prefix. Negative values are not allowed.</param>
+            <param name="casing">The casing method used for the prefix.</param>
+        </member>
+        <member name="P:NetChalker.Chalker.Casing">
+            <summary>
+            The casing used in this instance.
+            </summary>
+        </member>
+        <member name="P:NetChalker.Chalker.DefaultBackgroundColor">
+            <summary>
+            The default background color. (set at construction of instance.)
+            </summary>
+        </member>
+        <member name="P:NetChalker.Chalker.MessageTypes">
+            <summary>
+            The default message types. Can be modified.
+            </summary>
+        </member>
+        <member name="P:NetChalker.Chalker.PaddingRight">
+            <summary>
+            The padding to the right used in this instance.
+            </summary>
+        </member>
+        <member name="P:NetChalker.Chalker.AppendSpace">
+            <summary>
+            Should there be a space after the prefix?
+            </summary>
+        </member>
+        <member name="M:NetChalker.Chalker.GetStringCasing(System.String)">
+            <summary>
+            Gets the correct casing for the currently set casing method.
+            </summary>
+            <param name="str">The string to be properly cased.</param>
+            <returns>Returns the correctly cased string.</returns>
+        </member>
+        <member name="M:NetChalker.Chalker.ResetPaddingRight">
+            <summary>
+            Resets the padding to the right to the minimum value.
+            </summary>
+        </member>
+        <member name="M:NetChalker.Chalker.WriteError(System.String)">
+            <summary>
+            Outputs the <paramref name="message"/> prefixed with the <see cref="F:NetChalker.MessageType.Error"/> type.
+            </summary>
+            <param name="message">The message to output.</param>
+        </member>
+        <member name="M:NetChalker.Chalker.WriteWarning(System.String)">
+            <summary>
+            Outputs the <paramref name="message"/> prefixed with the <see cref="F:NetChalker.MessageType.Warning"/> type.
+            </summary>
+            <param name="message">The message to output.</param>
+        </member>
+        <member name="M:NetChalker.Chalker.WriteSuccess(System.String)">
+            <summary>
+            Outputs the <paramref name="message"/> prefixed with the <see cref="F:NetChalker.MessageType.Success"/> type.
+            </summary>
+            <param name="message">The message to output.</param>
+        </member>
+        <member name="M:NetChalker.Chalker.WriteWait(System.String)">
+            <summary>
+            Outputs the <paramref name="message"/> prefixed with the <see cref="F:NetChalker.MessageType.Wait"/> type.
+            </summary>
+            <param name="message">The message to output.</param>
+        </member>
+        <member name="M:NetChalker.Chalker.WriteMessage(System.String)">
+            <summary>
+            Outputs the <paramref name="message"/> prefixed with the <see cref="F:NetChalker.MessageType.Info"/> type.
+            </summary>
+            <param name="message">The message to output.</param>
+        </member>
+        <member name="M:NetChalker.Chalker.WriteMessage(NetChalker.MessageType,System.String)">
+            <summary>
+            Outputs the <paramref name="message"/> with a specific <see cref="T:NetChalker.MessageType"/>.
+            </summary>
+            <param name="type">The type that will be used.</param>
+            <param name="message">The message to output.</param>
+        </member>
+        <member name="M:NetChalker.Chalker.WriteMessage(System.Int32,System.String)">
+            <summary>
+            Outputs the <paramref name="message"/> with a specific ID found in the <see cref="P:NetChalker.Chalker.MessageTypes"/> dictionary.
+            </summary>
+            <param name="id">The ID that will be used.</param>
+            <param name="message">The message to output.</param>
+        </member>
+        <member name="M:NetChalker.Chalker.WriteMessage(NetChalker.MessageTypeData,System.String)">
+            <summary>
+            Outputs the <paramref name="message"/> with a specific <see cref="T:NetChalker.MessageTypeData"/>.
+            </summary>
+            <param name="messageTypeData">The <see cref="T:NetChalker.MessageTypeData"/> that will be used.</param>
+            <param name="message">The message to output.</param>
+        </member>
+        <member name="M:NetChalker.Chalker.WriteMessage(System.ConsoleColor,System.String,System.String)">
+            <summary>
+            Outputs the <paramref name="message"/> with a specific color and prefix.
+            </summary>
+            <param name="color">The background color.</param>
+            <param name="prefix">The prefix text.</param>
+            <param name="message">The message to output.</param>
+        </member>
+        <member name="T:NetChalker.TextCasing">
+            <summary>
+            This contains all possible text casing options.
+            </summary>
+        </member>
+        <member name="F:NetChalker.TextCasing.Default">
+            <summary>
+            The default casing as provided by the prefix string.
+            </summary>
+        </member>
+        <member name="F:NetChalker.TextCasing.Lowercase">
+            <summary>
+            lowercases the whole string.
+            </summary>
+        </member>
+        <member name="F:NetChalker.TextCasing.Uppercase">
+            <summary>
+            UPPERCASES THE WHOLE STRING.
+            </summary>
+        </member>
+        <member name="F:NetChalker.TextCasing.FirstLetterUpper">
+            <summary>
+            Makes the first letter of the string uppercase.
+            </summary>
+        </member>
+        <member name="F:NetChalker.TextCasing.Titlecase">
+            <summary>
+            Title Cases The Whole String.
+            </summary>
+        </member>
+    </members>
+</doc>
