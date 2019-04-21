@@ -129,7 +129,7 @@ namespace NetChalker
         /// Outputs the <paramref name="message"/> prefixed with the <see cref="MessageType.Wait"/> type.
         /// </summary>
         /// <param name="message">The message to output.</param>
-        public void WriteWait(string message) => WriteMessage(MessageType.Info, message);
+        public void WriteWait(string message) => WriteMessage(MessageType.Wait, message);
         /// <summary>
         /// Outputs the <paramref name="message"/> prefixed with the <see cref="MessageType.Info"/> type.
         /// </summary>
